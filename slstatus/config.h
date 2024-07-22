@@ -21,7 +21,7 @@ static const struct arg args[] = {
     { ram_used,		"  %s",	NULL },
     { ram_perc,		" (%s%%) |",	NULL },
     { datetime,		" 📅 %s |",	"%a, %B %d"},
-    { datetime,		" 🧭 %s |",	"%I:%M %p"},
+    { datetime,		" 🧭 %s |",	"%I:%M:%S %p"},
     { battery_perc,		" 💀 %s%%",	"BAT0"},
 };
 

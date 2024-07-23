@@ -14,7 +14,6 @@ static const struct arg args[] = {
 //	{ datetime, "[%s]", "%F %r" }
 /* function format          argument */
 //	{ datetime, " 🧭 %s |", "%I:%M:%S %p"},
-//	{ battery_state,	"(%s) ",	"BAT0" },
 //	{ run_command,		" %s ",	vol },
 //	{ run_command,		" %s ",	mic },
     { cpu_perc,		"  %s%% |",	NULL },
@@ -23,5 +22,6 @@ static const struct arg args[] = {
     { datetime,		" 📅 %s |",	"%a, %B %d"},
     { datetime,		" 🧭 %s |",	"%I:%M:%S %p"},
     { battery_perc,		" 💀 %s%%",	"BAT0"},
+	{ battery_state,	"(%s) ",	"BAT0" },
 };
 

@@ -22,6 +22,6 @@ static const struct arg args[] = {
     { datetime,		" 📅 %s |",	"%a, %B %d"},
     { datetime,		" 🧭 %s |",	"%I:%M:%S %p"},
     { battery_perc,		" 💀 %s%%",	"BAT0"},
-	{ battery_state,	"(%s) ",	"BAT0" },
+	{ battery_state,	"(%s)",	"BAT0" },
 };
 

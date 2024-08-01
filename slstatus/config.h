@@ -1,5 +1,5 @@
 /* interval between updates (in ms) */
-const unsigned int interval = 1000;
+const unsigned int interval = 6000;
 /* text to show if no value can be retrieved */
 static const char unknown_str[] = "n/a";
 /* maximum output string length */
@@ -16,11 +16,11 @@ static const struct arg args[] = {
 //	{ datetime, " 🧭 %s |", "%I:%M:%S %p"},
 //	{ run_command,		" %s ",	vol },
 //	{ run_command,		" %s ",	mic },
-    { cpu_perc,		"  %s%% |",	NULL },
-    { ram_used,		"  %s",	NULL },
-    { ram_perc,		" (%s%%) |",	NULL },
+//    { cpu_perc,		"  %s%% |",	NULL },
+//    { ram_used,		"  %s",	NULL },
+//    { ram_perc,		" (%s%%) |",	NULL },
     { datetime,		" 📅 %s |",	"%a, %B %d"},
-    { datetime,		" 🧭 %s |",	"%I:%M:%S %p"},
+    { datetime,		" 🧭 %s |",	"%I:%M %p"},
     { battery_perc,		" 💀 %s%%",	"BAT0"},
 	{ battery_state,	"(%s)",	"BAT0" },
 };

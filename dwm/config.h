@@ -149,7 +149,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_b,		spawn,		{.v = (const char*[]){ BIT, NULL } } },
 	{ MODKEY,			XK_p,		spawn,		SHCMD(TERMINAL " -e alsamixer ") },
 	{ MODKEY,			XK_Escape,	spawn,		SHCMD(TERMINAL " -e htop") },
-	{ MODKEY|ShiftMask,		XK_backslash,	spawn,		{.v = (const char*[]){ TERMINAL, "-e", "lf", NULL } } },
+	//{ MODKEY|ShiftMask,		XK_backslash,	spawn,		{.v = (const char*[]){ TERMINAL, "-e", "lf", NULL } } },
 	{ MODKEY,                       XK_r,  	   	togglefloating, {0} },
 	{ MODKEY|ShiftMask,		XK_r,		togglefloating,	{0} },
 	{ MODKEY,			XK_t,		setlayout,	{.v = &layouts[0]} }, /* tile */

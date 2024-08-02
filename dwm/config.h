@@ -7,16 +7,16 @@
 #define BIT "bleachbit"
 
 /* appearance */
-static unsigned int borderpx  = 3;        /* border pixel of windows */
-static unsigned int snap      = 32;       /* snap pixel */
-static unsigned int gappih    = 20;       /* horiz inner gap between windows */
-static unsigned int gappiv    = 10;       /* vert inner gap between windows */
-static unsigned int gappoh    = 10;       /* horiz outer gap between windows and screen edge */
-static unsigned int gappov    = 30;       /* vert outer gap between windows and screen edge */
-static int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
-static int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
-static int showbar            = 1;        /* 0 means no bar */
-static int topbar             = 1;        /* 0 means bottom bar */
+static unsigned int borderpx  = 3;        // border pixel of windows
+static unsigned int snap      = 32;       // snap pixel
+static unsigned int gappih    = 20;       // horiz inner gap between windows
+static unsigned int gappiv    = 10;       // vert inner gap between windows
+static unsigned int gappoh    = 10;       // horiz outer gap between windows and screen edge
+static unsigned int gappov    = 30;       // vert outer gap between windows and screen edge
+static int swallowfloating    = 0;        // 1 means swallow floating windows by default
+static int smartgaps          = 0;        // 1 means no outer gap when there is only one window
+static int showbar            = 1;        // 0 means no bar
+static int topbar             = 1;        // 0 means bottom bar
 static char *fonts[]          = { "Hack:weight=bold:size=9", "JoyPixels:pixelsize=9:antialias=true:autohint=true"  };
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
@@ -127,8 +127,8 @@ static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	STACKKEYS(MODKEY,                          focus)
 	STACKKEYS(MODKEY|ShiftMask,                push)
-	/* { MODKEY|ShiftMask,		XK_Escape,	spawn,	SHCMD("") }, */
-	/* { MODKEY|ShiftMask,		XK_grave,	togglescratch,	SHCMD("") }, */
+	//{ MODKEY|ShiftMask,		XK_Escape,	spawn,	SHCMD("") },
+	//{ MODKEY|ShiftMask,		XK_grave,	togglescratch,	SHCMD("") },
 	TAGKEYS(			XK_1,		0)
 	TAGKEYS(			XK_2,		1)
 	TAGKEYS(			XK_3,		2)
@@ -141,33 +141,33 @@ static const Key keys[] = {
 	{ MODKEY,			XK_0,		view,		{.ui = ~0 } },
 	{ MODKEY|ShiftMask,		XK_0,		tag,		{.ui = ~0 } },
 	{ MODKEY,			XK_Tab,		view,		{0} },
-	/* { MODKEY|ShiftMask,		XK_Tab,		spawn,		SHCMD("") }, */
+	//{ MODKEY|ShiftMask,		XK_Tab,		spawn,		SHCMD("") },
 	{ MODKEY,			XK_q,		killclient,	{0} },
 	{ MODKEY|ShiftMask,	        XK_q,      	quit,           {0} },
 	{ MODKEY,			XK_w,		spawn,		{.v = (const char*[]){ BROWSER, NULL } } },
-	{ MODKEY|ShiftMask,		XK_b,		spawn,		{.v = (const char*[]){ BIT, NULL } } },
 	{ MODKEY|ShiftMask,		XK_w,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "nmtui", NULL } } },
+	{ MODKEY|ShiftMask,		XK_b,		spawn,		{.v = (const char*[]){ BIT, NULL } } },
 	{ MODKEY,			XK_p,		spawn,		SHCMD(TERMINAL " -e alsamixer ") },
-	{ MODKEY,			XK_Escape,		spawn,		SHCMD(TERMINAL " -e htop") },
-	{ MODKEY|ShiftMask,		XK_backslash,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "lf", NULL } } },
-	{ MODKEY,                       XK_r,  	   togglefloating, {0} },
+	{ MODKEY,			XK_Escape,	spawn,		SHCMD(TERMINAL " -e htop") },
+	{ MODKEY|ShiftMask,		XK_backslash,	spawn,		{.v = (const char*[]){ TERMINAL, "-e", "lf", NULL } } },
+	{ MODKEY,                       XK_r,  	   	togglefloating, {0} },
+	{ MODKEY|ShiftMask,		XK_r,		togglefloating,	{0} },
 	{ MODKEY,			XK_t,		setlayout,	{.v = &layouts[0]} }, /* tile */
-	{ MODKEY,			XK_backslash,		view,		{0} },
-	/* { MODKEY|ShiftMask,		XK_backslash,	        spawn,		SHCMD("") }, */
-
+	//{ MODKEY|ShiftMask,		XK_backslash,	spawn,		SHCMD("") },
 	{ MODKEY,			XK_a,		togglegaps,	{0} },
 	{ MODKEY|ShiftMask,		XK_a,		defaultgaps,	{0} },
 	{ MODKEY,			XK_s,		togglesticky,	{0} },
-	/* { MODKEY|ShiftMask,		XK_s,		spawn,		SHCMD("") }, */
-	{ MODKEY,			XK_d,	spawn,          {.v = (const char*[]){ "dmenu_run", NULL } } },
-	//{ MODKEY|ShiftMask,		XK_space,	spawn,		{.v = (const char*[]){ "passmenu", NULL } } },
+	//{ MODKEY|ShiftMask,		XK_s,		spawn,		SHCMD("") },
+	{ MODKEY,			XK_d,		spawn,          {.v = (const char*[]){ "dmenu_run", NULL } } },
 	{ MODKEY,			XK_f,		togglefullscr,	{0} },
-	{ MODKEY,			XK_space,	zoom,		{0} },
 	//{ MODKEY|ShiftMask,		XK_f,		setlayout,	{.v = &layouts[8]} },
+	{ MODKEY,			XK_space,	zoom,		{0} },
+	//{ MODKEY|ShiftMask,		XK_space,	spawn,		{.v = (const char*[]){ "passmenu", NULL } } },
 	{ MODKEY,			XK_g,		shiftview,	{ .i = -1 } },
 	{ MODKEY|ShiftMask,		XK_g,		shifttag,	{ .i = -1 } },
 	{ MODKEY,			XK_h,		setmfact,	{.f = -0.05} },
 	{ MODKEY,			XK_l,		setmfact,      	{.f = +0.05} },
+	{ MODKEY|ShiftMask,		XK_l,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "lf", NULL } } },
 	{ MODKEY,			XK_semicolon,	shiftview,	{ .i = 1 } },
 	{ MODKEY|ShiftMask,		XK_semicolon,	shifttag,	{ .i = 1 } },
 	{ MODKEY,			XK_apostrophe,	togglescratch,	{.ui = 1} },
@@ -175,43 +175,29 @@ static const Key keys[] = {
 	{ MODKEY,			XK_Return,	spawn,		{.v = termcmd } },
 	{ MODKEY|ShiftMask,		XK_Return,	togglescratch,	{.ui = 0} },
 	{ MODKEY,			XK_z,		incrgaps,	{.i = +3 } },
-	/* { MODKEY|ShiftMask,		XK_z,		spawn,		SHCMD("") }, */
+	//{ MODKEY|ShiftMask,		XK_z,		spawn,		SHCMD("") },
 	{ MODKEY,			XK_x,		incrgaps,	{.i = -3 } },
-	/* { MODKEY|ShiftMask,		XK_x,		spawn,		SHCMD("") }, */
-	/* { MODKEY|ShiftMask,		XK_c,		spawn,		SHCMD("") }, */
+	//{ MODKEY|ShiftMask,		XK_x,		spawn,		SHCMD("") },
+	//{ MODKEY,			XK_c,		spawn,		SHCMD("") },
 	{ MODKEY,			XK_b,		togglebar,	{0} },
-	/* { MODKEY|ShiftMask,		XK_b,		spawn,		SHCMD("") }, */
+	//{ MODKEY|ShiftMask,		XK_b,		spawn,		SHCMD("") },
 	{ MODKEY,			XK_n,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "nvim", NULL } } },
 	{ MODKEY|ShiftMask,		XK_n,		spawn,		SHCMD(TERMINAL " -e newsboat ") },
-	{ MODKEY,			XK_m,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "ncmpcpp", NULL } } },
-	{ MODKEY|ShiftMask,		XK_m,		spawn,		SHCMD("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; kill -44 $(pidof dwmblocks)") },
-	{ MODKEY,			XK_comma,	spawn,		{.v = (const char*[]){ "mpc", "prev", NULL } } },
-	{ MODKEY|ShiftMask,		XK_comma,	spawn,		{.v = (const char*[]){ "mpc", "seek", "0%", NULL } } },
-	{ MODKEY,			XK_period,	spawn,		{.v = (const char*[]){ "mpc", "next", NULL } } },
-	{ MODKEY|ShiftMask,		XK_period,	spawn,		{.v = (const char*[]){ "mpc", "repeat", NULL } } },
 
 	{ MODKEY,			XK_Left,	focusmon,	{.i = -1 } },
 	{ MODKEY|ShiftMask,		XK_Left,	tagmon,		{.i = -1 } },
 	{ MODKEY,			XK_Right,	focusmon,	{.i = +1 } },
 	{ MODKEY|ShiftMask,		XK_Right,	tagmon,		{.i = +1 } },
 
-	{ MODKEY,			XK_Page_Up,	shiftview,	{ .i = -1 } },
-	{ MODKEY|ShiftMask,		XK_Page_Up,	shifttag,	{ .i = -1 } },
-	{ MODKEY,			XK_Page_Down,	shiftview,	{ .i = +1 } },
-	{ MODKEY|ShiftMask,		XK_Page_Down,	shifttag,	{ .i = +1 } },
-
-	//{ MODKEY,			XK_F4,		spawn,		SHCMD(TERMINAL " -e alsamixer ") },
 	{ MODKEY,			XK_F5,		xrdb,		{.v = NULL } },
-	{ MODKEY,			XK_F11,		spawn,		SHCMD("mpv --untimed --no-cache --no-osc --no-input-default-bindings --profile=low-latency --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)") },
-	{ MODKEY,			XK_F12,		spawn,		SHCMD("remaps") },
-	{ MODKEY|ShiftMask,		XK_d,	togglefloating,	{0} },
 
-	{ 0, XF86XK_MonBrightnessUp,		spawn,		SHCMD("brightnessctl set 5%+") },
-	{ 0, XF86XK_MonBrightnessDown,		spawn,		SHCMD("brightnessctl set 5%-") },
-
+	{ 0, XF86XK_MonBrightnessUp,	spawn,		SHCMD("brightnessctl set 5%+") },
+	{ 0, XF86XK_MonBrightnessDown,	spawn,		SHCMD("brightnessctl set 5%-") },
 	{ 0, XF86XK_AudioMute,		spawn,		SHCMD("amixer -q sset Master toggle") },
 	{ 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("amixer -q sset Master 5%+") },
 	{ 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("amixer -q sset Master 5%-") },
+
+	{ MODKEY,			XK_F11,		spawn,		SHCMD("mpv --untimed --no-cache --no-osc --no-input-default-bindings --profile=low-latency --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)") },
 
 };
 

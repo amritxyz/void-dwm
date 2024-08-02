@@ -6,22 +6,17 @@ static const char unknown_str[] = "n/a";
 #define MAXLEN 2048
 
 static const struct arg args[] = {
-//	{ temp, "[TEMP %sC] ", "/sys/class/thermal/thermal_zone0/temp" },
-//	{ cpu_perc, "[CPU %s%] ", NULL },
-//	{ ram_perc, "[RAM %s%] ", NULL },
-//	{ vol_perc, "[VOL %s%] ", "/dev/mixer1" },
-//	{ battery_perc, "[BAT %s%] ", "BAT0" },
-//	{ datetime, "[%s]", "%F %r" }
-/* function format          argument */
-//	{ datetime, " 🧭 %s |", "%I:%M:%S %p"},
-//	{ run_command,		" %s ",	vol },
-//	{ run_command,		" %s ",	mic },
-//    { cpu_perc,		"  %s%% |",	NULL },
-//    { ram_used,		"  %s",	NULL },
-//    { ram_perc,		" (%s%%) |",	NULL },
-    { datetime,		" 📅 %s |",	"%a, %B %d"},
-    { datetime,		" 🧭 %s |",	"%I:%M %p"},
-    { battery_perc,		" 💀 %s%%",	"BAT0"},
-	{ battery_state,	"(%s)",	"BAT0" },
+/* 	function format		argument */
+
+//	{ temp, 		"[TEMP %sC] ",	"/sys/class/thermal/thermal_zone0/temp" },
+//	{ vol_perc,		"[VOL %s%] ",	"/dev/mixer1" },
+//	{ datetime,		" 🧭 %s |",	"%I:%M:%S %p"},
+//	{ cpu_perc,		"  %s%% |",	NULL },
+//	{ ram_used,		"  %s",	NULL },
+//	{ ram_perc,		" (%s%%) |",	NULL },
+	{ datetime,		" 📅 %s |",	"%a, %B %d"},
+	{ datetime,		" 🧭 %s |",	"%I:%M %p"},
+	{ battery_perc,		" 💀 %s%%",	"BAT0"},
+	{ battery_state,	"(%s)",		"BAT0" },
 };
 

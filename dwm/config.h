@@ -75,6 +75,7 @@ static const Layout layouts[] = {
 
 /* key definitions */
 #define MODKEY Mod4Mask
+#define ALTKEY Mod1Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -145,13 +146,13 @@ static const Key keys[] = {
 	{ MODKEY,			XK_q,		killclient,	{0} },
 	{ MODKEY|ShiftMask,	        XK_q,      	quit,           {0} },
 	{ MODKEY,			XK_w,		spawn,		{.v = (const char*[]){ BROWSER, NULL } } },
-	{ MODKEY|ShiftMask,		XK_w,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "sudo", "nmtui", NULL } } },
+	{ MODKEY|ShiftMask,		XK_w,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "nmtui", NULL } } },
 	{ MODKEY|ShiftMask,		XK_b,		spawn,		{.v = (const char*[]){ BIT, NULL } } },
 	{ MODKEY,			XK_p,		spawn,		SHCMD(TERMINAL " -e alsamixer ") },
 	{ MODKEY,			XK_Escape,	spawn,		SHCMD(TERMINAL " -e htop") },
 	//{ MODKEY|ShiftMask,		XK_backslash,	spawn,		{.v = (const char*[]){ TERMINAL, "-e", "lf", NULL } } },
 	{ MODKEY,                       XK_r,  	   	togglefloating, {0} },
-	{ MODKEY|ShiftMask,		XK_r,		togglefloating,	{0} },
+	//{ MODKEY|ShiftMask,		XK_r,		togglefloating,	{0} },
 	{ MODKEY,			XK_t,		setlayout,	{.v = &layouts[0]} }, /* tile */
 	//{ MODKEY|ShiftMask,		XK_backslash,	spawn,		SHCMD("") },
 	{ MODKEY,			XK_a,		togglegaps,	{0} },
@@ -187,18 +188,31 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_o,		spawn,		SHCMD("xdotool type $(grep -v '^#' ~/.local/share/lab | dmenu -i -l 50 | cut -d' ' -f1)") },
 	{ MODKEY|ShiftMask,		XK_i,		spawn,		SHCMD("xdotool type $(grep -v '^#' ~/.local/share/hub | dmenu -i -l 50 | cut -d' ' -f1)") },
 
+	{ MODKEY|ShiftMask,		XK_s,		spawn,		SHCMD("pkill -USR1 -x sxhkd") },
+	{ MODKEY|ShiftMask,		XK_f,		spawn,		SHCMD("~/.config/scripts/scrot.sh")},
+	{ ALTKEY|ControlMask,		XK_Return,	spawn,		{.v = termcmd } },
+	{ ALTKEY|ControlMask,		XK_p,		spawn,		SHCMD("~/.config/scripts/picom-toggle.sh")},
+	{ ALTKEY|ControlMask,		XK_o,		spawn,		SHCMD("~/.config/scripts/xset.sh")},
+	{ ALTKEY|ShiftMask,		XK_l,		spawn,		SHCMD("slock")},
+	{ ALTKEY|ShiftMask,		XK_r,		spawn,		SHCMD("systemctl reboot")},
+	{ ALTKEY|ShiftMask,		XK_d,		spawn,		SHCMD("systemctl shutdown")},
+	{ ALTKEY,			XK_p,		spawn,		SHCMD("brightnessctl set 5%+") },
+	{ ALTKEY, 			XK_l,		spawn,		SHCMD("brightnessctl set 5%-") },
+	{ 0,				XK_F12,		spawn,		SHCMD("amixer -q sset Master 5%+") },
+	{ 0,				XK_F11,		spawn,		SHCMD("amixer -q sset Master 5%-") },
+	{ 0,				XK_F10,		spawn,		SHCMD("amixer -q sset Master toggle") },
+
 	{ MODKEY,			XK_Left,	focusmon,	{.i = -1 } },
 	{ MODKEY|ShiftMask,		XK_Left,	tagmon,		{.i = -1 } },
 	{ MODKEY,			XK_Right,	focusmon,	{.i = +1 } },
 	{ MODKEY|ShiftMask,		XK_Right,	tagmon,		{.i = +1 } },
-
 	{ MODKEY,			XK_F5,		xrdb,		{.v = NULL } },
 
 	{ 0, XF86XK_MonBrightnessUp,	spawn,		SHCMD("brightnessctl set 5%+") },
 	{ 0, XF86XK_MonBrightnessDown,	spawn,		SHCMD("brightnessctl set 5%-") },
-	{ 0, XF86XK_AudioMute,		spawn,		SHCMD("amixer -q sset Master toggle") },
 	{ 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("amixer -q sset Master 5%+") },
 	{ 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("amixer -q sset Master 5%-") },
+	{ 0, XF86XK_AudioMute,		spawn,		SHCMD("amixer -q sset Master toggle") },
 
 	{ MODKEY,			XK_F11,		spawn,		SHCMD("mpv --untimed --no-cache --no-osc --no-input-default-bindings --profile=low-latency --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)") },
 

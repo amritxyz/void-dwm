@@ -189,10 +189,10 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_i,		spawn,		SHCMD("xdotool type $(grep -v '^#' ~/.local/share/hub | dmenu -i -l 50 | cut -d' ' -f1)") },
 
 	{ MODKEY|ShiftMask,		XK_s,		spawn,		SHCMD("pkill -USR1 -x sxhkd") },
-	{ MODKEY|ShiftMask,		XK_f,		spawn,		SHCMD("~/.config/scripts/scrot.sh")},
+	{ MODKEY|ShiftMask,		XK_f,		spawn,		SHCMD("~/.local/bin/scrot.sh")},
 	{ ALTKEY|ControlMask,		XK_Return,	spawn,		{.v = termcmd } },
-	{ ALTKEY|ControlMask,		XK_p,		spawn,		SHCMD("~/.config/scripts/picom-toggle.sh")},
-	{ ALTKEY|ControlMask,		XK_o,		spawn,		SHCMD("~/.config/scripts/xset.sh")},
+	{ ALTKEY|ControlMask,		XK_p,		spawn,		SHCMD("~/.local/bin/picom-toggle.sh")},
+	{ ALTKEY|ControlMask,		XK_o,		spawn,		SHCMD("~/.local/bin/xset.sh")},
 	{ ALTKEY|ShiftMask,		XK_l,		spawn,		SHCMD("slock")},
 	{ ALTKEY|ShiftMask,		XK_r,		spawn,		SHCMD("systemctl reboot")},
 	{ ALTKEY|ShiftMask,		XK_d,		spawn,		SHCMD("systemctl shutdown")},

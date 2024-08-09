@@ -70,7 +70,19 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[]=",	tile },			/* Default: Master on left, slaves on right */
-	{ "><>",	NULL },			/* no layout function means floating behavior */
+	{ "TTT",	bstack },               /* Master on top, slaves on bottom */
+
+	{ "[@]",	spiral },               /* Fibonacci spiral */
+	{ "[\\]",	dwindle },              /* Decreasing in size right and leftward */
+
+	{ "[D]",	deck },	                /* Master on left, slaves in monocle-like mode on right */
+	{ "[M]",	monocle },              /* All windows on top of eachother */
+
+	{ "|M|",	centeredmaster },		/* Master in middle, slaves on sides */
+	{ ">M>",	centeredfloatingmaster },	/* Same but master floats */
+
+	{ "><>",	NULL },	                /* no layout function means floating behavior */
+	{ NULL,		NULL },
 };
 
 /* key definitions */
@@ -154,6 +166,14 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_r,  	   	togglefloating, {0} },
 	//{ MODKEY|ShiftMask,		XK_r,		togglefloating,	{0} },
 	{ MODKEY,			XK_t,		setlayout,	{.v = &layouts[0]} }, /* tile */
+	{ MODKEY|ShiftMask,		XK_t,		setlayout,	{.v = &layouts[1]} }, /* bstack */
+	{ MODKEY,			XK_c,		setlayout,	{.v = &layouts[6]} }, /* centeredmaster */
+	{ MODKEY|ShiftMask,		XK_c,		setlayout,	{.v = &layouts[7]} }, /* centeredfloatingmaster */
+	{ MODKEY,			XK_m,		setlayout,	{.v = &layouts[5]} }, /* monocle */
+	{ MODKEY|ShiftMask,		XK_m,		setlayout,	{.v = &layouts[4]} }, /* deck */
+	{ MODKEY,			XK_u,		setlayout,	{.v = &layouts[2]} }, /* spiral */
+	{ MODKEY|ShiftMask,		XK_u,		setlayout,	{.v = &layouts[3]} }, /* dwindle */
+
 	//{ MODKEY|ShiftMask,		XK_backslash,	spawn,		SHCMD("") },
 	{ MODKEY,			XK_a,		togglegaps,	{0} },
 	{ MODKEY|ShiftMask,		XK_a,		defaultgaps,	{0} },

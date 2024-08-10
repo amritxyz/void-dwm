@@ -211,7 +211,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_s,		spawn,		SHCMD("pkill -USR1 -x sxhkd") },
 	{ MODKEY|ShiftMask,		XK_f,		spawn,		SHCMD("~/.local/bin/scrot.sh")},
 	{ ALTKEY|ControlMask,		XK_Return,	spawn,		{.v = termcmd } },
-	{ ALTKEY|ControlMask,		XK_p,		spawn,		SHCMD("~/.local/bin/picom-toggle.sh")},
+	{ ALTKEY|ControlMask,		XK_p,		spawn,		SHCMD("~/.local/bin/xcompmgr-toggle.sh")},
 	{ ALTKEY|ControlMask,		XK_o,		spawn,		SHCMD("~/.local/bin/xset.sh")},
 	{ ALTKEY|ShiftMask,		XK_l,		spawn,		SHCMD("slock")},
 	{ ALTKEY,			XK_p,		spawn,		SHCMD("brightnessctl set 5%+") },

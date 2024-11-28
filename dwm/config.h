@@ -5,8 +5,6 @@
 #define TERMCLASS "St"
 #define BROWSER "firefox"
 #define BIT "bleachbit"
-#define OBS "obs"
-#define GIMP "gimp"
 
 /* appearance */
 static unsigned int borderpx  = 3;        // border pixel of windows
@@ -162,8 +160,6 @@ static const Key keys[] = {
 	{ MODKEY,			XK_w,		spawn,		{.v = (const char*[]){ BROWSER, NULL } } },
 	{ MODKEY|ShiftMask,		XK_w,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "sudo", "nmtui", NULL } } },
 	{ MODKEY|ShiftMask,		XK_b,		spawn,		{.v = (const char*[]){ BIT, NULL } } },
-	{ MODKEY,			XK_y,		spawn,		{.v = (const char*[]){ OBS, NULL } } },
-	{ MODKEY|ShiftMask,		XK_y,		spawn,		{.v = (const char*[]){ GIMP, NULL } } },
 	{ MODKEY,			XK_p,		spawn,		SHCMD(TERMINAL " -e alsamixer ") },
 	{ MODKEY,			XK_Escape,	spawn,		SHCMD(TERMINAL " -e htop") },
 	//{ MODKEY|ShiftMask,		XK_backslash,	spawn,		{.v = (const char*[]){ TERMINAL, "-e", "lf", NULL } } },
@@ -269,4 +265,3 @@ static const Button buttons[] = {
 	{ ClkTagBar,		0,		Button5,	shiftview,	{.i = 1} },
 	{ ClkRootWin,		0,		Button2,	togglebar,	{0} },
 };
-

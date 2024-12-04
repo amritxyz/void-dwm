@@ -1,4 +1,4 @@
-# Luke's build of dwm
+# Void's build of dwm
 
 ## FAQ
 
@@ -12,7 +12,6 @@ I haven't kept `man dwm`/`dwm.1` updated though. PRs welcome on that, lol.
 
 ## Patches and features
 
-- [Clickable statusbar](https://dwm.suckless.org/patches/statuscmd/) with my build of [dwmblocks](https://github.com/lukesmithxyz/dwmblocks).
 - Reads [xresources](https://dwm.suckless.org/patches/xresources/) colors/variables (i.e. works with `pywal`, etc.).
 - scratchpad: Accessible with <kbd>mod+shift+enter</kbd>.
 - New layouts: bstack, fibonacci, deck, centered master and more. All bound to keys <kbd>super+(shift+)t/y/u/i</kbd>.
@@ -28,9 +27,8 @@ I haven't kept `man dwm`/`dwm.1` updated though. PRs welcome on that, lol.
 ## Installation for newbs
 
 ```bash
-git clone https://github.com/LukeSmithxyz/dwm.git
-cd dwm
-sudo make install
+git clone --depth=1 https://gitlab.com/NyxVoid/void-dwm.git
+sudo make -C void-dwm/dwm clean install
 ```
 
 There is also a `PKGBUILD` usable on distributions with pacman. Run `makepkg -si` instead of `sudo make install`.

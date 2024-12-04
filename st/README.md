@@ -1,4 +1,4 @@
-# Luke's build of st - the simple (suckless) terminal
+# Void's build of st - the simple (suckless) terminal
 
 The [suckless terminal (st)](https://st.suckless.org/) with some additional
 features that make it literally the best terminal emulator ever:
@@ -39,9 +39,8 @@ features that make it literally the best terminal emulator ever:
 You should have xlib header files and libharfbuzz build files installed.
 
 ```
-git clone https://github.com/LukeSmithxyz/st
-cd st
-sudo make install
+git clone https://gitlab.com/NyxVoid/void-dwm
+sudo make -C void-dwm/st clean install
 ```
 
 Obviously, `make` is required to build. `fontconfig` is required for the
@@ -85,5 +84,5 @@ Note that when you run `wal`, it will negate the transparency of existing window
 
 ## Contact
 
-- Luke Smith <luke@lukesmith.xyz>
-- [https://lukesmith.xyz](https://lukesmith.xyz)
+- Nyx Void<void44404@proton.me>
+- [https://nyx-void.github.io](https://nyx-void.github.io)

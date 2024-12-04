@@ -1,4 +1,4 @@
-# Luke's dmenu
+# Void's dmenu
 
 Extra stuff added to vanilla dmenu:
 

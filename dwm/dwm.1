@@ -1,6 +1,6 @@
 .TH DWM 1 dwm\-VERSION
 .SH NAME
-dwm \- dynamic window manager (Luke Smith <https://lukesmith.xyz>'s build)
+dwm \- dynamic window manager (Nyx Void <https://nyx-void.github.io>'s build)
 .SH SYNOPSIS
 .B dwm
 .RB [ \-v ]
@@ -60,12 +60,12 @@ Spawn
 .BR dmenu(1)
 for launching other programs.
 .TP
-.B Super\-grave
+.B Super\-e
 Spawn
 .BR dmenuunicode(1)
 for selecting emoji.
 .TP
-.B Super\-minus/plus, Super\-Shift\-minus/plus
+.B F11, F12
 Decrease/increase volume by 5 and 15 respectively.
 .TP
 .B Super\-b
@@ -81,16 +81,25 @@ Sets tiled/bstack layouts.
 Toggle fullscreen window.
 .TP
 .B Super\-F
+Select and screenshoot.
+.TP
+.B Super\-r
 Toggle floating layout.
 .TP
-.B Super\-y/Y
-Sets Fibonacci spiral/dwinde layouts.
+.B Super\-c/C
+Sets CenterMaster/CenterFloatingMaster layout.
+.TP
+.B Super\-m/M
+Sets Monocle/deck layout.
 .TP
 .B Super\-u/U
-Sets centered master layout.
+Sets Fibonacci spiral/dwinde layout.
 .TP
-.B Super\-i/I
-Sets centered master or floating master layouts.
+.B Super\-i
+snippet for hub
+.TP
+.B Super\-o
+snippet for lab
 .TP
 .B Super\-space
 Zooms/cycles focused window to/from master area.
@@ -109,9 +118,6 @@ Increase master area size.
 .TP
 .B Super\-h
 Decrease master area size.
-.TP
-.B Super\-Shift\-space
-Toggle focused window between tiled and floating state.
 .TP
 .B Super\-Tab
 Toggles to the previously selected tags.

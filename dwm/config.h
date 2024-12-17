@@ -210,6 +210,7 @@ static const Key keys[] = {
 
 	{ MODKEY|ShiftMask,		XK_o,		spawn,		SHCMD("xdotool type $(grep -v '^#' ~/.local/share/lab | dmenu -i -l 20 | cut -d' ' -f1)") },
 	{ MODKEY|ShiftMask,		XK_i,		spawn,		SHCMD("xdotool type $(grep -v '^#' ~/.local/share/hub | dmenu -i -l 20 | cut -d' ' -f1)") },
+	{ MODKEY|ShiftMask,		XK_p,		spawn,		SHCMD("xdotool type $(grep -v '^#' ~/.local/share/key | dmenu -i -l 20 | cut -d' ' -f1)") },
 
 	{ MODKEY|ShiftMask,		XK_s,		spawn,		SHCMD("pkill -USR1 -x sxhkd") },
 	{ MODKEY|ShiftMask,		XK_f,		spawn,		SHCMD("~/.local/bin/scrot.sh")},

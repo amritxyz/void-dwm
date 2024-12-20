@@ -173,7 +173,6 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_m,		setlayout,	{.v = &layouts[4]} }, /* deck */
 	{ MODKEY,			XK_u,		setlayout,	{.v = &layouts[2]} }, /* spiral */
 	{ MODKEY|ShiftMask,		XK_u,		setlayout,	{.v = &layouts[3]} }, /* dwindle */
-
 	//{ MODKEY|ShiftMask,		XK_backslash,	spawn,		SHCMD("") },
 	{ MODKEY,			XK_a,		togglegaps,	{0} },
 	{ MODKEY|ShiftMask,		XK_a,		defaultgaps,	{0} },
@@ -207,11 +206,9 @@ static const Key keys[] = {
 	{ MODKEY,			XK_o,		spawn,		SHCMD("xdotool type $(grep -v '^#' ~/.local/share/snippets | dmenu -i -l 20 | cut -d' ' -f1)") },
 	{ MODKEY,			XK_e,		spawn,		SHCMD("cut -d ';' -f1 ~/.local/share/chars/emoji | dmenu -i -l 20 | sed 's/ .*//' | xclip -selection clipboard && xdotool type $(xclip -o -selection clipboard)") },
 	{ MODKEY|ShiftMask,		XK_e,		spawn,		SHCMD("cut -d ';' -f1 ~/.local/share/chars/font-awesome | dmenu -i -l 20 | sed 's/ .*//' | xclip -selection clipboard && xdotool type $(xclip -o -selection clipboard)") },
-
 	{ MODKEY|ShiftMask,		XK_o,		spawn,		SHCMD("xdotool type $(grep -v '^#' ~/.local/share/lab | dmenu -i -l 20 | cut -d' ' -f1)") },
 	{ MODKEY|ShiftMask,		XK_i,		spawn,		SHCMD("xdotool type $(grep -v '^#' ~/.local/share/hub | dmenu -i -l 20 | cut -d' ' -f1)") },
 	{ MODKEY|ShiftMask,		XK_p,		spawn,		SHCMD("xdotool type $(grep -v '^#' ~/.local/share/key | dmenu -i -l 20 | cut -d' ' -f1)") },
-
 	{ MODKEY|ShiftMask,		XK_s,		spawn,		SHCMD("pkill -USR1 -x sxhkd") },
 	{ MODKEY|ShiftMask,		XK_f,		spawn,		SHCMD("~/.local/bin/scrot.sh")},
 	{ MODKEY|ShiftMask,		XK_x,		spawn,		SHCMD("~/.local/bin/setxkbmap.sh")},

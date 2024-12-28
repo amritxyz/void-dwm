@@ -203,8 +203,6 @@ static const Key keys[] = {
 	//{ MODKEY|ShiftMask,		XK_b,		spawn,		SHCMD("") },
 	{ MODKEY,			XK_n,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "nvim", NULL } } },
 	{ MODKEY|ShiftMask,		XK_n,		spawn,		SHCMD(TERMINAL " -e newsraft") },
-	{ MODKEY,			XK_e,		spawn,		SHCMD("cut -d ';' -f1 ~/.local/share/chars/emoji | dmenu -i -l 20 | sed 's/ .*//' | xclip -selection clipboard && xdotool type $(xclip -o -selection clipboard)") },
-	{ MODKEY|ShiftMask,		XK_e,		spawn,		SHCMD("cut -d ';' -f1 ~/.local/share/chars/font-awesome | dmenu -i -l 20 | sed 's/ .*//' | xclip -selection clipboard && xdotool type $(xclip -o -selection clipboard)") },
 	{ MODKEY,			XK_o,		spawn,		SHCMD("xdotool type --delay 0 $(grep -v '^#' ~/.local/share/snippets | dmenu -i -l 20 -p Snippets | cut -d' ' -f1)") },
 	{ MODKEY|ShiftMask,		XK_o,		spawn,		SHCMD("xdotool type --delay 0 $(grep -v '^#' ~/.local/share/key | dmenu -i -l 20 -p Key | cut -d' ' -f1)") },
 	/*{ MODKEY|ShiftMask,		XK_s,		spawn,		SHCMD("pkill -USR1 -x sxhkd") },*/

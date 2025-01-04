@@ -5,6 +5,7 @@
 #define TERMCLASS "St"
 #define BROWSER "firefox"
 #define BIT "bleachbit"
+#define TORR "deluge-gtk"
 
 /* appearance */
 static unsigned int borderpx  = 3;        // border pixel of windows
@@ -160,6 +161,7 @@ static const Key keys[] = {
 	{ MODKEY,			XK_w,		spawn,		{.v = (const char*[]){ BROWSER, NULL } } },
 	{ MODKEY|ShiftMask,		XK_w,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "sudo", "nmtui", NULL } } },
 	{ MODKEY|ShiftMask,		XK_b,		spawn,		{.v = (const char*[]){ BIT, NULL } } },
+	{ MODKEY|ShiftMask,		XK_b,		spawn,		{.v = (const char*[]){ TORR, NULL } } },
 	{ MODKEY,			XK_p,		spawn,		SHCMD(TERMINAL " -e alsamixer ") },
 	{ MODKEY,			XK_Escape,	spawn,		SHCMD(TERMINAL " -e htop") },
 	//{ MODKEY|ShiftMask,		XK_backslash,	spawn,		{.v = (const char*[]){ TERMINAL, "-e", "lf", NULL } } },

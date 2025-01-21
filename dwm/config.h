@@ -5,6 +5,7 @@
 #define TERMCLASS "St"
 #define BROWSER "firefox"
 #define BIT "bleachbit"
+#define GIMP "gimp"
 #define TORR "deluge-gtk"
 
 /* appearance */
@@ -161,6 +162,7 @@ static const Key keys[] = {
 	{ MODKEY,			XK_w,		spawn,		{.v = (const char*[]){ BROWSER, NULL } } },
 	{ MODKEY|ShiftMask,		XK_w,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "sudo", "nmtui", NULL } } },
 	{ MODKEY|ShiftMask,		XK_b,		spawn,		{.v = (const char*[]){ BIT, NULL } } },
+	{ MODKEY,			XK_y,		spawn,		{.v = (const char*[]){ GIMP, NULL } } },
 	{ MODKEY,			XK_e,		spawn,		{.v = (const char*[]){ TORR, NULL } } },
 	{ MODKEY,			XK_p,		spawn,		SHCMD(TERMINAL " -e alsamixer ") },
 	{ MODKEY,			XK_Escape,	spawn,		SHCMD(TERMINAL " -e htop") },

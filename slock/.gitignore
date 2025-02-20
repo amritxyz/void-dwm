@@ -1,0 +1,8 @@
+.gitignore
+*.o
+*.orig
+*.rej
+larbs.pdf
+patches
+util.o
+slock

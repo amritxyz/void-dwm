@@ -1,25 +1,75 @@
-## my built of dwm, dmenu, st, slock and slstatus
+# My Build of Dwm, Dmenu, St, Slock, and Slstatus
 
-### dwm
-Dynamic window manager.<br>
-dwm is a dynamic window manager for X. <br>
-It manages windows in tiled, monocle and floating layouts. <br>
+This is a personal build of **Dwm**, **Dmenu**, **St**, **Slock**, and **Slstatus**. If you are new to this process, there is an [autoInstall Script](https://github.com/amritxyz/void-install) to make things easier. However, if you prefer to do it manually, follow the steps below.
 
-### dmenu
-Dynamic menu<br>
-dmenu is a dynamic menu for X. <br>
-originally designed for dwm. <br>
-It manages large numbers of user-defined menu items efficiently.
+---
 
-### st
-Simple terminal<br>
-st is a simple terminal implementation for X.
+## Step 1: Install Dependencies
 
-### slock
-Simple X display locker. <br>
-This is the simplest X screen locker we are aware of.<br>
-It is stable and quite a lot of people in our community are<br>
-using it every day when they are out with friends or fetching some food from the local pub.<br>
+Before we begin, you’ll need to install the necessary dependencies to compile **Dwm**, **Dmenu**, **St**, **Slstatus**, and **Slock**. Run the following command to install the required libraries:
 
-### slstatus
-slstatus is a status monitor for window managers that use stdin to fill the status bar.<br>
+```bash
+sudo xbps-install base-devel harfbuzz-devel libX11-devel libXinerama-devel libXft-devel libXrandr-devel
+```
+
+These libraries are crucial for building the software from source.
+
+---
+
+## Step 2: Clone the Repository
+
+Next, we will clone the repository to your machine. 
+
+**Note:** I recommend using the **`~/.local/src/`** directory to store the **Dwm** configs.
+
+```bash
+mkdir -p ~/.local/src
+```
+
+Now, clone the repository:
+
+```bash
+git clone --depth=1 https://github.com/amritxyz/void-dwm.git ~/.local/src/void-dwm
+```
+
+---
+
+## Step 3: Compile the Software
+
+After cloning the repository, compile the necessary components with the following commands:
+
+```bash
+sudo make -C ~/.local/src/void-dwm/dwm/ clean install
+sudo make -C ~/.local/src/void-dwm/dmenu/ clean install
+sudo make -C ~/.local/src/void-dwm/st/ clean install
+sudo make -C ~/.local/src/void-dwm/slstatus/ clean install
+sudo make -C ~/.local/src/void-dwm/slock/ clean install
+```
+
+---
+
+## Software Overview
+
+### **Dwm** – Dynamic Window Manager  
+**dwm** is a dynamic window manager for X. It can manage windows in three different layouts: **tiled**, **monocle**, and **floating**.
+
+### **Dmenu** – Dynamic Menu  
+**dmenu** is a dynamic menu for X, originally designed for use with **dwm**. It efficiently manages large numbers of user-defined menu items.
+
+### **St** – Simple Terminal  
+**st** is a simple terminal implementation for X. It focuses on simplicity and performance.
+
+### **Slock** – Simple X Display Locker  
+**slock** is a simple X screen locker. It’s lightweight, stable, and widely used by the community. It’s perfect for locking your display when you’re away from your computer.
+
+### **Slstatus** – Status Monitor  
+**slstatus** is a status monitor for window managers. It uses **stdin** to fill the status bar with various system information.
+
+---
+
+### Additional Tips:
+- Make sure to have **Xorg** and **X11** set up on your system.
+- For troubleshooting or questions, feel free to check out the [Issues section](https://github.com/amritxyz/void-dwm/issues) of the repository.
+- Customizing **dwm**, **dmenu**, and other components is encouraged for personal use.
+
+Enjoy your setup with **Dwm**, **Dmenu**, **St**, **Slock**, and **Slstatus**!

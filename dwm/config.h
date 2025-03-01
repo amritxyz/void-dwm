@@ -3,7 +3,7 @@
 /* Constants */
 #define TERMINAL "st"
 #define TERMCLASS "St"
-#define BROWSER "firefox"
+#define BROWSER "chromium"
 #define BIT "bleachbit"
 #define GIMP "gimp"
 #define TORR "deluge-gtk"

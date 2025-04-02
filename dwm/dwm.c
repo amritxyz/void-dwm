@@ -1019,6 +1019,7 @@ focusstack(const Arg *arg)
 	    i -= ISVISIBLE(c) ? 1 : 0, p = c, c = c->next);
 	focus(c ? c : p);
 	restack(selmon);
+	/*XWarpPointer(dpy, None, c->win, 0, 0, 0, 0, c->w/2, c->h/2); // Wrap mouse pointer */
 }
 
 Atom
